@@ -44,7 +44,7 @@ const Header = () => {
               style={[homeStyles.progressFill, { width: `${percentageProgress}%` }]}
             />
           </View>
-          <Text style={homeStyles.progressText}>{Math.round(percentageProgress)}</Text>
+          <Text style={homeStyles.progressText}>{Math.round(percentageProgress)}%</Text>
         </View>
       </View>
     </View>

@@ -13,12 +13,14 @@ const TodoInput = () => {
     const  homeStyles = createHomeStyles(colors);
     const [ todo, setTodo ] = useState("");
     const addTodo = useMutation(api.todos.addTodo);
+
     const handleAddTodo = async () => {
         if (todo.trim()) {
             try {
                 await addTodo({ text: todo.trim() });
                 setTodo("");
-            } catch {
+            } catch(error) {
+                console.error("Error adding an Item to the todo item", error)
                 Alert.alert("Error", "Failed to add Todo")
             }
         }
